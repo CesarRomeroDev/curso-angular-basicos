@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';     //se agrega tambien 
+
 import { MainPageComponent } from './main-page/main-page.component';
 
 
@@ -12,7 +14,8 @@ import { MainPageComponent } from './main-page/main-page.component';
     MainPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule        // angular nos ofrece varios tipos de formularios. agregamos 
   ]
 })
 export class DbzModule { }
