@@ -3,25 +3,13 @@
 
 <div class="row">
     <div class="col">
-        <h3>Personajes</h3>
-        <hr>
-        <ul>
-            <li *ngFor="let personaje of personajes; let i = index">{{ personaje.nombre }} - {{ personaje.poder | number }} </li>
-        </ul>
+        <app-personajes [personajes]="personajes"></app-personajes>
     </div>
 
     <div class="col">
-        <h3>Agregar</h3>
-        <hr>
-
-        <form (ngSubmit)="agregar()">     <!--evento de angular ngSubmit, nos sirve para que ya no recargue la pagina-->
-            <input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="nuevo.nombre"/><!--Tanto emite como resive eventos o propiedades [(ngModel)]-->
-            <!--[value]="nuevo.nombre" (input)="cambiarNombre( $event )"--><!--con estas llaves cuadradas estamso indicandole que en el lado de nuestro componente hay un valor que quiero enlazarlo directamente "one data binding, enlazado en una sola vía"-->
-
-            <input type="number" placeholder="Poder" name="poder" [(ngModel)]="nuevo.poder"/><!--Tanto emite como resive eventos o propiedades [(ngModel)]-->
-            <!--[value]="nuevo.poder"--><!--con estas llaves cuadradas estamso indicandole que en el lado de nuestro componente hay un valor que quiero enlazarlo directamente "one data binding, enlazado en una sola vía"-->
-
-            <button type="submit">Agregar</button>
-        </form>
+        <app-agregar 
+        [personajes]="personajes"
+        [nuevo]="nuevo"
+        ></app-agregar>
     </div>
 </div>
